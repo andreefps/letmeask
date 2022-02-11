@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
 
 function App() {
   return (
-    
-     <h1>Oi Ne</h1> 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms/new" element={<NewRoom />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
