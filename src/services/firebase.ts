@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app' // no compat for new SDK
 import { getDatabase } from 'firebase/database'
-import { getAuth } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,5 +16,9 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 
-export const auth = getAuth();
-export const database = getDatabase();
+const auth = getAuth(); 
+const database = getDatabase();
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GoogleAuthProvider();
+
+export { auth, database , googleProvider,githubProvider, signInWithPopup}
